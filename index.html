@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAEPALAN</title>
+  <style>
+    body {
+      background-color: pink;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      color: white;
+      font-size: 2em;
+      margin-bottom: 1rem;
+    }
+
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 1.5rem;
+      color: #4a004a;
+    }
+
+    .choice-button {
+      display: block;
+      width: 200px;
+      margin: 0.5rem auto;
+      padding: 0.8rem;
+      font-size: 1em;
+      background-color: #fff;
+      border: 2px solid #ff69b4;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .choice-button:hover {
+      background-color: #ffb6c1;
+    }
+
+    .result {
+      margin-top: 2rem;
+      font-size: 1.2em;
+      color: #800080;
+      display: none;
+    }
+
+    .reward {
+      font-size: 1.5em;
+      margin-top: 1rem;
+    }
+
+    /* Panda styles */
+    .panda {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 50%;
+      border: 3px solid #333;
+    }
+
+    .panda::before, .panda::after {
+      content: '';
+      position: absolute;
+      background: black;
+      border-radius: 50%;
+    }
+
+    /* Ears */
+    .panda::before {
+      width: 50px;
+      height: 50px;
+      top: -25px;
+      left: -10px;
+    }
+
+    .panda::after {
+      width: 50px;
+      height: 50px;
+      top: -25px;
+      right: -10px;
+    }
+
+    /* Eyes */
+    .panda-eye {
+      position: absolute;
+      top: 60px;
+      width: 40px;
+      height: 50px;
+      background: black;
+      border-radius: 50%;
+    }
+
+    .panda-eye.left {
+      left: 30px;
+    }
+
+    .panda-eye.right {
+      right: 30px;
+    }
+
+    .panda-eye::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 10px;
+      width: 15px;
+      height: 15px;
+      background: white;
+      border-radius: 50%;
+    }
+
+    /* Nose */
+    .panda-nose {
+      position: absolute;
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 15px;
+      background: black;
+      border-radius: 50%;
+    }
+
+    /* Mouth */
+    .panda-mouth {
+      position: absolute;
+      top: 140px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 30px;
+      border-bottom: 4px solid black;
+      border-radius: 0 0 30px 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>EPAL QUIZ FOR IVYYY</h1>
+  <div class="question">
+    f(x) = sin(x)? find the derivative of this function
+
+  </div>
+
+  <button class="choice-button" onclick="showResult('wrong')">A) -cos(x)</button>
+<button class="choice-button" onclick="showResult('correct')">B) cos(x)</button>
+<button class="choice-button" onclick="showResult('wrong')">C) tan(x)</button>
+<button class="choice-button" onclick="showResult('wrong')">D) sec(x)</button>
+
+  <div class="result" id="result">
+    <span id="message"></span>
+    <div class="reward"></div>
+    <div class="panda">
+      <div class="panda-eye left"></div>
+      <div class="panda-eye right"></div>
+      <div class="panda-nose"></div>
+      <div class="panda-mouth"></div>
+    </div>
+  </div>
+
+  <script>
+    function showResult(answer) {
+      const result = document.getElementById("result");
+      const message = document.getElementById("message");
+      result.style.display = "block";
+      if (answer === "correct") {
+        message.textContent = "HERE'S YOUR PANPANNNNNNNNNNN(sayo na rin daw ako)";
+      } else {
+        message.textContent = "oops, okay lang sa'yo parin akooo, I mean yung panda sayo pa rin HAHAHAHHAHAHAH";
+      }
+    }
+  </script>
+</body>
+</html>
